@@ -26,9 +26,9 @@ router.post('/register', async (req, res) => {
         }
         const user = new User({ username, email, password });
         await user.save();
-        res.status(201).json({ message: 'Kullanıcı başarıyla oluşturuldu.' });
+        res.status(201).json({ message: 'Kullanıcı başarıyla oluşturuldu. E-posta adresinize doğrulama bağlantısı gönderildi.' });
     } catch (error) {
-        console.error("Hata: ", error); 
+        console.error("Hata: ", error);
         res.status(400).json({ error: error.message });
     }
 });
